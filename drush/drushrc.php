@@ -263,47 +263,65 @@ if (file_exists($json_path)) {
 $options['variables'] = (array) $cfg->variables;
 
 $options['init-modules'] = array(
+  'admin_menu',
+  'admin_menu_toolbar',
+  'advanced_help',
   'ctools',
-
-  'entity',
-  'locale',
-  'entity_translation',
-  'i18n',
+  'page_manager',
 
   'date',
-  'strongarm',
-  'variable',
-  'taxonomy_access_fix',
+  'date_all_day',
+  'date_tools',
+  'date_views',
 
-  'views',
-  'views_ui',
-  'views_bulk_operations',
+  'flexslider',
+  'flexslider_fields',
+  'flexslider_views',
 
-//  'migrate',
-  'features',
-  'entityreference',
-  'link',
-  'title',
-  'wysiwyg',
+  'imce',
+
+  'i18n_field',
+  'i18n',
+  'i18n_node',
+  'i18n_string',
+
+  'colorbox',
+  'form_builder',
+  'form_builder_examples',
+  'form_builder_webform',
+
+  'jquery_countdown_timer',
+  'libraries',
   'pathauto',
-  'uuid',
+  'token',
+  'twitter_block',
 
-//  'fe_block',
+  'panels_mini',
+  'panels_node',
+  'panels',
+  'panels_ipe',
 
-  'search_api',
-  'facetapi',
-  'search_api_facetapi',
-  'search_api_solr',
+  'socialmedia',
 
-  'search_api_et',
-  'search_api_attachments',
-  'search_api_et_solr',
-  'search_api_attachments_field_collections',
+  'captcha',
+  'recaptcha',
 
-  'cms_search',
+  'googleanalytics',
+  'ckeditor',
 
-  'imce_wysiwyg',
+  'options_element',
+  'scroll_to_destination_anchors',
 
+  'variable',
+  'views',
+  'views_infinite_scroll',
+  'views_ui',
+
+  'webform',
+  'widgets',
+
+
+  'wwd_theme',
 );
 switch ($cfg->variables->cms_instance) {
   case 'cms':
@@ -381,4 +399,3 @@ $command_specific['devify_solr'] = array(
 if (file_exists(dirname(__FILE__) . '/drushrc.local.php')) {
   include_once dirname(__FILE__) . '/drushrc.local.php';
 }
-
