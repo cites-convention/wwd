@@ -1,0 +1,50 @@
+{
+    "db" : {
+        "host": "localhost",
+        "username" : "root",
+        "password" : "root",
+        "port": 3306,
+        "database" : "cms",
+        "root_username": "root",
+        "root_password": "root"
+    },
+    "admin" : {
+        "username": "admin",
+        "password": "admin",
+        "email": "account@example.com"
+    },
+    "uri": "http://cms.localhost",
+    "solr_server": {
+        "solr_id": "cms_solr",
+        "name": "Apache Solr server",
+        "enabled": 1,
+        "description": "",
+        "scheme": "http",
+        "host": "127.0.0.1",
+        "port": 8080,
+        "path": "/solr/cms",
+        "http_user": "",
+        "http_password": "",
+        "excerpt": 1,
+        "retrieve_data": 1,
+        "highlight_data": 1,
+        "skip_schema_check": null,
+        "solr_version": "",
+        "http_method": "AUTO",
+        "apachesolr_read_only": null,
+        "apachesolr_direct_commit": 1,
+        "apachesolr_soft_commit": 1
+    },
+    "variables": {
+        "cms_instance": "cms",
+        "environment": "development",
+        "site_name": "My Drupal Site",
+        "site_mail": "account@example.com",
+        "file_temporary_path": "/tmp",
+        "file_private_path" : "/var/local/cms/private_files",
+        "search_api_attachments_extract_using": "solr",
+        "search_api_attachments_extracting_servlet_path": "update/extract",
+        "search_api_attachments_tika_path": "",
+        "search_api_attachments_tika_jar": ""
+    }
+}
