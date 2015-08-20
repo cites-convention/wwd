@@ -1,17 +1,6 @@
 # Ignore configuration files that may contain sensitive information.
 sites/*/settings*.php
 
-OPYRIGHT.txt
-INSTALL.mysql.txt
-INSTALL.pgsql.txt
-INSTALL.sqlite.txt
-INSTALL.txt
-LICENSE.txt
-MAINTAINERS.txt
-README.txt
-UPGRADE.txt
-web.config
-
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
