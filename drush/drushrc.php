@@ -320,7 +320,7 @@ $options['init-modules'] = array(
   'webform',
   'widgets',
 
-
+  'memcache_storage',
   'wwd_theme',
 );
 switch ($cfg->variables->cms_instance) {
