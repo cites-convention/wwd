@@ -1,0 +1,93 @@
+
+.introduction .reveal{
+	background-color: rgba(255,255,255,0.9);
+	border: 0.7rem solid #fff;
+	border-radius: 6px;
+}
+.welcomeMessage .rtecenter a, .welcomeMessage a:hover{
+	border: none;
+	margin: 0;
+	padding: 0;
+}
+
+/* .containeur{
+	padding-top: 135px;
+} */
+
+.containeur p{
+	text-align: justify;
+}
+
+.containeur .block-menu{
+	display: none;
+}
+
+.splash{
+	background-color: #fff;
+	opacity: 0.9;
+	width: 100%;
+	
+}
+.partnersList{
+	background-color: aqua;
+}
+
+.docs-color-block {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+.view-key-messages h3{
+	text-align: center;
+	text-decoration: none;
+	text-transform: normal;
+	font-variant: small-caps;
+	font-size: 1rem;
+	
+}
+.view-content .views-field-title h3, .field-item h3{
+	padding-top: 20px;
+	text-decoration: none;
+	text-transform: normal;
+	font-variant: small-caps;
+	font-size: 2.5rem;
+}
+.view-key-messages .field-content{
+	text-align: left;
+}
+.page .wrap .top-bar-right ul li a{
+	color: #000;
+}
+.page #logo-image-white{
+	display: none;
+}
+
+#home > div.slogan.animated.bounceInDown > h1 {
+  
+    background: rgba(128, 128, 128, 0.58);
+    width: 70%;
+    margin-left: 16%;
+    border-radius: 10px;
+ }
+ 
+  #webform-client-form-138 {
+ 	width: 64%;
+ 	
+ }
+ 
+ section#about {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+section#events {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+section#partners {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
