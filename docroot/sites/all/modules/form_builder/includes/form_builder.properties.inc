@@ -34,6 +34,8 @@ function form_builder_property_key_form(&$form_state, $form_type, $element, $pro
 
 /**
  * Element validate function for the "key" property. Ensure safe characters.
+ *
+ * @todo make part of this a form method.
  */
 function form_builder_property_key_form_validate($element, $form_state) {
   if (!preg_match('/^[a-z0-9_]+$/', $element['#value'])) {
@@ -42,28 +44,24 @@ function form_builder_property_key_form_validate($element, $form_state) {
 
   // Check that the new key does not conflict with an existing key.
   if ($element['#value'] != $element['#default_value']) {
-    $active_form = form_builder_active_form();
-    $form = form_builder_cache_load($active_form['form_type'], $active_form['form_id']);
-    $parents = $element['#parents'];
-    array_pop($parents);
-    $parents[] = $element['#value'];
-    $key_exists = FALSE;
-    foreach ($parents as $key) {
-      if (isset($form[$key])) {
-        $form = $form[$key];
-        $key_exists = TRUE;
-      }
-      else {
-        $key_exists = FALSE;
-        break;
-      }
-    }
-
-    if ($key_exists) {
-      form_error($element, t('The form key %key is already in use.', array('%key' => $element['#value'])));
+    // Assuming to be called from form_builder_field_configure().
+    list($form_type, $form_id, $element_id) = $form_state['build_info']['args'];
+    $form_obj = FormBuilderLoader::instance()->fromCache($form_type, $form_id);
+    $parent = _form_builder_get_element_parent($form_obj, $element_id);
+    $new_key = $form_state['values']['key'];
+    if (isset($parent[$new_key])) {
+      form_set_error('key', t('The form key %key is already in use.', array('%key' => $new_key)));
     }
   }
+}
 
+/**
+ * Get the parent element of an element from the form.
+ */
+function _form_builder_get_element_parent($form_obj, $element_id) {
+  $element = $form_obj->getElementArray($element_id);
+  $parent_id = $element['#form_builder']['parent_id'];
+  return $form_obj->getElementArray($parent_id);
 }
 
 /**
@@ -215,7 +213,7 @@ function form_builder_property_options_form(&$form_state, $form_type, $element, 
 }
 
 function form_builder_property_options_form_submit(&$form, &$form_state) {
-  $options = $form_state['values']['options']['options'];
+  $options = $form_state['values']['options']['options_field'];
   $default_value = $form_state['values']['options']['default_value'];
 
   if (isset($form_state['values']['options']['multiple'])) {
@@ -243,7 +241,7 @@ function form_builder_property_default_value_form(&$form_state, $form_type, $ele
     // exception, though.
     '#type' => $element['#type'] == 'textarea' ? 'textarea' : 'textfield',
     '#title' => t('Default value'),
-    '#default_value' => $element['#type'] == 'value' ? $element['#value'] : $element['#default_value'],
+    '#default_value' => $element['#default_value'],
     '#weight' => 1,
   );
 

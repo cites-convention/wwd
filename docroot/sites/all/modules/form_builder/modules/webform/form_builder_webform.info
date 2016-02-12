@@ -4,9 +4,11 @@ core = 7.x
 dependencies[] = form_builder
 dependencies[] = webform
 
-; Information added by Drupal.org packaging script on 2014-11-19
-version = "7.x-1.6"
+files[] = 'form_builder_webform.classes.inc'
+
+; Information added by Drupal.org packaging script on 2015-08-25
+version = "7.x-1.13"
 core = "7.x"
 project = "form_builder"
-datestamp = "1416430574"
+datestamp = "1440525840"
 

@@ -137,12 +137,21 @@ function form_builder_examples_form_builder_field_access($op, $form_type, $form_
 }
 
 /**
- * Implementation of hook_form_builder_types().
+ * Implements hook_form_builder_form_types().
+ */
+function form_builder_examples_form_builder_form_types() {
+  return array('example' => array());
+}
+
+/**
+ * Implements of hook_form_builder_element_types().
  *
  * Define the supported fields and properties supported by CCK.
  */
-function form_builder_examples_form_builder_types() {
-  $fields = array();
+function form_builder_examples_form_builder_element_types($form_type, $form_id) {
+  if ($form_type != 'example') {
+    return;
+  }
 
   $fields['fieldset'] = array(
     'title' => t('Fieldset'),
@@ -327,9 +336,7 @@ function form_builder_examples_form_builder_types() {
     ),
   );
 
-  return array(
-    'example' => $fields,
-  );
+  return $fields;
 }
 
 /**
@@ -394,7 +401,9 @@ function form_builder_examples_export_form() {
 
   $form = array();
 
-  $current = form_builder_cache_load('example', 'sample');
+  $current = FormBuilderLoader::instance()
+    ->fromCache('example', 'sample')
+    ->getFormArray();
 
   $form['export'] = array(
     '#type' => 'textarea',
