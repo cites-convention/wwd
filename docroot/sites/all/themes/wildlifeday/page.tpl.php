@@ -10,7 +10,8 @@
 
 	<div class="containeur">
 		<div class="wrap row">
-
+		<h3 class="field-content" id="field-content">
+		<?php print $title; ?></h3>
 		<?php print render($page['content']); ?>
 
 		</div>

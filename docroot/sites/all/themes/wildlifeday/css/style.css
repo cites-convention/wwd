@@ -50,8 +50,7 @@
 	padding-top: 20px;
 	text-decoration: none;
 	text-transform: normal;
-	font-variant: small-caps;
-	font-size: 2.5rem;
+	
 }
 .view-key-messages .field-content{
 	text-align: left;
@@ -66,8 +65,8 @@
 #home > div.slogan.animated.bounceInDown > h1 {
   
     background: rgba(128, 128, 128, 0.58);
-    width: 70%;
-    margin-left: 16%;
+  width: 86%;
+  margin-left: 7%;
     border-radius: 10px;
  }
  
@@ -91,3 +90,24 @@ section#partners {
     padding-bottom: 0px;
 }
 
+#home > .wrap {
+  
+  padding: 20px 0; }
+  
+ul.social-medias.columns.small-4.medium-2.large-3 {
+    margin-left: 82%;
+    width: auto;
+    position: absolute;
+    top: auto;
+}
+
+.slogan.animated.bounceInDown {
+    top: 27vw !important;
+}
+
+.view-content .views-field-title h4, .field-item h4{
+	padding-top: 20px;
+	text-decoration: none;
+	text-transform: normal;
+	
+}
