@@ -1224,7 +1224,8 @@ h6 {
 
 @media screen and (min-width: 40em) {
   h1 {
-    font-size: 3rem; }
+    font-size: 3rem;
+    }
   h2 {
     font-size: 2.5rem; }
   h3 {
@@ -4017,7 +4018,7 @@ table.hover tr:nth-of-type(even):hover {
 /*
 *	MEDIA QUERIES
 */
-@media screen and (max-width: 55em) {
+@media screen and (max-width: 1024px) {
   .nav-mobile {
     display: block; }
   .nav-desktop {
@@ -4030,7 +4031,7 @@ table.hover tr:nth-of-type(even):hover {
   .slogan h1 {
     font-size: 2.2rem; } }
 
-@media screen and (min-width: 55em) {
+@media screen and (min-width: 1024px) {
   .nav-mobile {
     display: none; }
   .hero {
@@ -4046,14 +4047,16 @@ table.hover tr:nth-of-type(even):hover {
 /*===========================================================*/
 .slogan {
   position: absolute;
-  left: 0;
+  top: 0;
+  left: 6%;
   z-index: 20;
   color: #fefefe;
-  height: 100%;
-  width: 100%;
+  height: auto;
+  width: 88%;
   margin: 0 auto;
   display: none;
-  font-size: 4.5rem; }
+  font-size: 4.5rem;
+  }
   .slogan h1 span {
     background-color: rgba(255, 255, 255, 0.2);
     width: 224px;
@@ -4080,22 +4083,23 @@ table.hover tr:nth-of-type(even):hover {
 
 .hero {
   width: 100%;
-  height: 100vh;	
+  height: auto;
   position: relative;
   background-color: #fff;
   transition: background 0.4s ease 0.1s;
   overflow: hidden; }
   .hero .intro-hero {
     width: 100%;
-    height: 20%;
-    max-height: 794px;
+    height: 15%;
+    /* max-height: 794px; */
     font-size: 1em;
     z-index: 100;
     display: block;
     position: absolute;
     overflow: hidden;
-    top: 86vh;
-    left: 0; }
+    bottom: 6.4%;
+    left: 0;
+    }
   .hero #carousel {
     z-index: 10; }
     .hero #carousel .item img {
@@ -4108,6 +4112,8 @@ table.hover tr:nth-of-type(even):hover {
     padding-left: 0; }
     .hero .wrap .msg, .hero .wrap .social-medias {
       display: block;
+      position: relative;
+      left: 2px;
       padding-top: 5px;
       margin: 0;
       padding: 0;
@@ -4214,7 +4220,7 @@ table.hover tr:nth-of-type(even):hover {
   .msg > li > h6 {
     display: none; } }
 
-@media screen and (max-width: 101.25em) {
+/*@media screen and (max-width: 101.25em) {
   .hero {
     background-image: url(../img/bg-top-images/top-bg-1.jpg);
     background-attachment: fixed;
@@ -4316,7 +4322,7 @@ table.hover tr:nth-of-type(even):hover {
       padding: 0; }
 
 /*
-*	MEDIA QUERIES
+* MEDIA QUERIES
 */
 @media screen and (max-width: 75em) {
   .introduction .welcomeMessage {
