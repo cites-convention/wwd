@@ -4097,8 +4097,8 @@ table.hover tr:nth-of-type(even):hover {
     display: block;
     position: absolute;
     overflow: hidden;
-    bottom: 6.4%;
-    left: 0;
+    bottom: 2.4%;
+    left: -17px;
     }
   .hero #carousel {
     z-index: 10; }
