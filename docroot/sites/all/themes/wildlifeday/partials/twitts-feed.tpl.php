@@ -2,7 +2,7 @@
 	<div class="button"><i class="fa fa-twitter fa-2x"></i></div>
 </div>
 <div class="twitts-feed columns">
-	<h6>Twitts by World Wild Life</h6>
+	<h6>Tweets by World Wildlife Day</h6>
 	<section>
 
 		<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/WildlifeDay" data-widget-id="695203585752186880">Tweets by @WildlifeDay</a>
