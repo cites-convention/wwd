@@ -5,10 +5,10 @@
  */
 
 (function ($) {
-	
-	
-	
-	//	load Foundation 
+
+
+
+	//	load Foundation
 	$(document).foundation();
 
 
@@ -56,8 +56,8 @@
 			$('.page .wrap .top-bar-right ul li a').css('color','#000');
 			$('.top-bar-right ul').css('line-height', '100px');
 			$('.twitts-bt .button').css('background-color', 'transparent');
-		} 
-		
+		}
+
 		/* bacground color of the top bar on small devices */
 // 		if ($(document).scrollTop() > 90) {
 // 			$('.nav-mobile').css('background-color' , 'rgba(0,0,0,0.7)');
@@ -69,7 +69,7 @@
 
 
 	$(document).ready(function() {
-		
+
 		// Owl Carousel on the landing page
 		$('#carousel').owlCarousel({
 			lazyLoad : true,
@@ -79,21 +79,21 @@
 			singleItem:true,
 			navigation : false,
 		});
-		
+
 		// Go back on top */
-		$(window).scroll(function () { 
+		$(window).scroll(function () {
 			if ($(window).scrollTop() > $('body').height() / 2) {
 				$('.scroll-to-Top').css('display','block');
 			} else {
 				$('.scroll-to-Top').css('display','none');
 		  }
 		});
-		
+
 		// Mobile hide/show menus
 		$('.nav-mobile .button').click(function() {
 			$('#menus-mobile').toggle("speed");
 		});
-		
+
 		// Show twitter feeds
 		$('.twitts .twitts-bt .button').click(function(){
 			if( $('.twitts').hasClass('in-Canvas') ){
@@ -103,9 +103,9 @@
 			}
 
 		});
-		
+
 		// hero text animation
-		var terms = ["wildlife", "elephants"];
+		var terms = ["Listen to the young voices", "Do one thing today to help protect the world's wildlife"];
 		function rotateTerm() {
 			var ct = $(".wildlife").data("term") || 0;
 			$(".wildlife").data("term", ct == terms.length -1 ? 0 : ct + 1).text(terms[ct]).fadeIn().delay(3000).fadeOut(500, rotateTerm);
@@ -119,7 +119,7 @@
 		function wildlifeAnim(){
 			$( '.wildlife' ).addClass('animated bounceInRight').css('display' , 'inline-block')
 		}
-		
+
 		var windowsize = $(window).width();
 		windowsize = $(window).width();
 		if (windowsize > 800) {
@@ -141,5 +141,5 @@
 	});
 
 
-	
+
 })(jQuery);
