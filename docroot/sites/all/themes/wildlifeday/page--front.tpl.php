@@ -22,14 +22,15 @@
 	</div>
 
 	<div class="intro-hero">
-		<div class="wrap row">	
+		<div class="wrap row">
 			<ul class="msg columns small-8 medium-10 large-9">
+				<!-- DELETE THESE COMMENTS TO PUT BACK UNSG MESSAGE
 				<li class="animated fadeInUp">
 					<a data-open="Ban-Ki-moon_welcome-panel" href="#">
-						<img src="<?php print $directory;?>/img/Ban-Ki-moon-SG-UN1r.jpg" alt="Ban Ki-moon">
+						<img src="<?php print $directory;?>/img/UN-SG-image.jpg" alt="United Nations SG">
 					</a>
-					<h6>Ban Ki-moon Secretary-General United Nations</h6>
-				</li>
+					<h6>António Guterres Secretary-General United Nations</h6>
+				</li>-->
 				<li class="animated fadeInUp">
 					<a data-open="John_Scanlon_welcome-panel" href="#">
 						<img src="<?php print $directory;?>/img/John_Scanlon_SG_CITES.jpg" alt="John Scanlon">
@@ -52,25 +53,25 @@
 
 </section>
 
-	
+
 <!-- Welcome messages REVEAL -->
 
 <?php print render($page['welcome_msgs']); ?>
 
 <section class="introduction wrap small-up-1 medium-up-1">
 	<div class="reveal welcomeMessage columns" id="Ban-Ki-moon_welcome-panel" data-reveal data-overlay="false">
-			
+
 			<?php print render($page['welcome_msgs_1st']); ?>
-			
-		
+
+
 			<button class="close-button" data-close aria-label="Close reveal" type="button">
 				<span aria-hidden="true">&times;</span>
 			</button>
 	</div>
 	<div class="reveal welcomeMessage columns" id="John_Scanlon_welcome-panel" data-reveal data-overlay="false">
-			
+
 			<?php print render($page['welcome_msgs_2nd']); ?>
-			
+
 			<button class="close-button" data-close aria-label="Close reveal" type="button">
 				<span aria-hidden="true">&times;</span>
 			</button>
