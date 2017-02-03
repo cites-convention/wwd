@@ -26,7 +26,7 @@
 	background-color: #fff;
 	opacity: 0.9;
 	width: 100%;
-	
+
 }
 .partnersList{
 	background-color: aqua;
@@ -44,13 +44,13 @@
 	text-transform: normal;
 	font-variant: small-caps;
 	font-size: 1rem;
-	
+
 }
 .view-content .views-field-title h3, .field-item h3{
 	padding-top: 20px;
 	text-decoration: none;
 	text-transform: normal;
-	
+
 }
 .view-key-messages .field-content{
 	text-align: left;
@@ -63,18 +63,18 @@
 }
 
 #home > div.slogan.animated.bounceInDown > h1 {
-  
+
     background: rgba(128, 128, 128, 0.58);
   width: 86%;
   margin-left: 7%;
     border-radius: 10px;
  }
- 
+
   #webform-client-form-138 {
  	width: 64%;
- 	
+
  }
- 
+
  section#about {
     padding-top: 0px;
     padding-bottom: 0px;
@@ -91,9 +91,9 @@ section#partners {
 }
 
 #home > .wrap {
-  
+
   padding: 20px 0; }
-  
+
 ul.social-medias.columns.small-4.medium-2.large-3 {
     margin-left: 84%;
     width: auto;
@@ -102,12 +102,12 @@ ul.social-medias.columns.small-4.medium-2.large-3 {
 }
 
 .slogan.animated.bounceInDown {
-    top: 27vw !important;
+    top: 23vw !important;
 }
 
 .view-content .views-field-title h4, .field-item h4{
 	padding-top: 20px;
 	text-decoration: none;
 	text-transform: normal;
-	
+
 }
