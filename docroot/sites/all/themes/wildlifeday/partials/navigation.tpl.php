@@ -27,7 +27,7 @@ if (drupal_is_front_page()) { ?>
     <nav class="top-bar nav-desktop" data-magellan>
 		<div class="wrap">
 			<div class="logo top-bar-left">
-				<a href="<?php print $front_page;?>"><img id="logo-image" src="/<?php print $directory;?>/img/logo-WWD_en_304x140.png" alt="<?php print $site_name;?>"></a>
+				<a href="<?php print $front_page;?>"><img id="logo-image" src="/<?php print $directory;?>/images/theme/logo-WWD_en_304x140.png" alt="<?php print $site_name;?>"></a>
 			</div>
 			<div class="top-bar-right">
 				<?php if ($main_menu): ?>
@@ -43,8 +43,8 @@ if (drupal_is_front_page()) { ?>
 		<div class="wrap">
 			<div class="logo top-bar-left">
 				<a href="<?php print $front_page;?>">
-					<img id="logo-image-white" src="/<?php print $directory;?>/img/logo-WWD_en_304x140.png" alt="<?php print $site_name;?>">
-					<img id="logo-image-black" src="/<?php print $directory;?>/img/logo-WWD_en_nb_304x140.png" alt="<?php print $site_name;?>">
+					<img id="logo-image-white" src="/<?php print $directory;?>/images/theme/logo-WWD_en_304x140.png" alt="<?php print $site_name;?>">
+					<img id="logo-image-black" src="/<?php print $directory;?>/images/theme/logo-WWD_en_nb_304x140.png" alt="<?php print $site_name;?>">
 				</a>
 			</div>
 			<div class="top-bar-right">

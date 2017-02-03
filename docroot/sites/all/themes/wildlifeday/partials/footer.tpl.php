@@ -53,7 +53,7 @@
 	<div class="row wrap">
 			<div class="flot-left columns small-12 medium-9">
 				<div class="bottomMenu row">
-					<a href="#home"><img class="columns small-4 medium-2" src="/<?php print $directory;?>/img/logo-WWD_en_174x80.png" alt=""></a>
+					<a href="#home"><img class="columns small-4 medium-2" src="/<?php print $directory;?>/images/theme/logo-WWD_en_174x80.png" alt=""></a>
 					<ul class="columns small-8 medium-10" data-magellan>
 						<li><a href="#about">About</a></li>
 						<li><a href="#events">Events</a></li>
