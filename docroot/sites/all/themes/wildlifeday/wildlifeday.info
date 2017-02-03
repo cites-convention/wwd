@@ -27,6 +27,7 @@ base theme = zurb_foundation
 ; CSS3 media queries: http://www.w3.org/TR/css3-mediaqueries/
 
 ; For CSS users, load the app.css file:
+stylesheets[all][] = css/foundation.min.css
 stylesheets[all][] = css/jquery-ui.min.css
 stylesheets[all][] = css/animate.css
 stylesheets[all][] = css/font-awesome.min.css
