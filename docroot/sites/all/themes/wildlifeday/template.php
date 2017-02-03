@@ -7,20 +7,20 @@
 /**
  * Loads additional template files.
  */
-function _zurb_foundation_load() {
-  $themepath = drupal_get_path('theme', 'zurb_foundation');
+function _wildlifeday_load() {
+  $themepath = drupal_get_path('theme', 'wildlifeday');
   include $themepath . '/inc/elements.inc';
   include $themepath . '/inc/form.inc';
   include $themepath . '/inc/menu.inc';
   include $themepath . '/inc/theme.inc';
 }
 
-_zurb_foundation_load();
+_wildlifeday_load();
 
 /**
  * Implements hook_html_head_alter().
  */
-function zurb_foundation_html_head_alter(&$head_elements) {
+function wildlifeday_html_head_alter(&$head_elements) {
   // HTML5 charset declaration.
   $head_elements['system_meta_content_type']['#attributes'] = array(
     'charset' => 'utf-8',
@@ -52,7 +52,7 @@ function zurb_foundation_html_head_alter(&$head_elements) {
  *
  * Print breadcrumbs as a list, with separators.
  */
-function zurb_foundation_breadcrumb($variables) {
+function wildlifeday_breadcrumb($variables) {
   $breadcrumb = $variables['breadcrumb'];
 
   if (!empty($breadcrumb)) {
@@ -79,7 +79,7 @@ function zurb_foundation_breadcrumb($variables) {
  *
  * Changes to the default field output.
  */
-function zurb_foundation_field($variables) {
+function wildlifeday_field($variables) {
   $output = '';
 
   // Render the label, if it's not hidden.
@@ -111,7 +111,7 @@ function zurb_foundation_field($variables) {
 /**
  * Implements theme_field__field_type().
  */
-function zurb_foundation_field__taxonomy_term_reference($variables) {
+function wildlifeday_field__taxonomy_term_reference($variables) {
   $output = '';
 
   // Render the label, if it's not hidden.
@@ -135,10 +135,10 @@ function zurb_foundation_field__taxonomy_term_reference($variables) {
 /**
  * Implements theme_links() targeting the main menu topbar.
  */
-function zurb_foundation_links__topbar_main_menu($variables) {
+function wildlifeday_links__topbar_main_menu($variables) {
   // We need to fetch the links ourselves because we need the entire tree.
   $links = menu_tree_output(menu_tree_all_data(variable_get('menu_main_links_source', 'main-menu')));
-  $output = _zurb_foundation_links($links);
+  $output = _wildlifeday_links($links);
   $variables['attributes']['class'][] = 'left';
 
   return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
@@ -147,10 +147,10 @@ function zurb_foundation_links__topbar_main_menu($variables) {
 /**
  * Implements theme_links() targeting the secondary menu topbar.
  */
-function zurb_foundation_links__topbar_secondary_menu($variables) {
+function wildlifeday_links__topbar_secondary_menu($variables) {
   // We need to fetch the links ourselves because we need the entire tree.
   $links = menu_tree_output(menu_tree_all_data(variable_get('menu_secondary_links_source', 'user-menu')));
-  $output = _zurb_foundation_links($links);
+  $output = _wildlifeday_links($links);
   $variables['attributes']['class'][] = 'right';
 
   return '<ul' . drupal_attributes($variables['attributes']) . '>' . $output . '</ul>';
@@ -165,14 +165,14 @@ function zurb_foundation_links__topbar_secondary_menu($variables) {
  * @return string
  *   A rendered list of links, with no <ul> or <ol> wrapper.
  *
- * @see zurb_foundation_links__system_main_menu()
- * @see zurb_foundation_links__system_secondary_menu()
+ * @see wildlifeday_links__system_main_menu()
+ * @see wildlifeday_links__system_secondary_menu()
  */
-function _zurb_foundation_links($links) {
+function _wildlifeday_links($links) {
   $output = '';
 
   foreach (element_children($links) as $key) {
-    $output .= _zurb_foundation_render_link($links[$key]);
+    $output .= _wildlifeday_render_link($links[$key]);
   }
 
   return $output;
@@ -187,9 +187,9 @@ function _zurb_foundation_links($links) {
  * @return string
  *   A rendered list of links, with no <ul> or <ol> wrapper.
  *
- * @see _zurb_foundation_links()
+ * @see _wildlifeday_links()
  */
-function _zurb_foundation_render_link($link) {
+function _wildlifeday_render_link($link) {
   $output = '';
 
   // This is a duplicate link that won't get the dropdown class and will only
@@ -220,7 +220,7 @@ function _zurb_foundation_render_link($link) {
     }
 
     if (!isset($rendered_link)) {
-      $rendered_link = theme('zurb_foundation_menu_link', array('link' => $link));
+      $rendered_link = theme('wildlifeday_menu_link', array('link' => $link));
     }
 
     // Test for localization options and apply them if they exist.
@@ -234,7 +234,7 @@ function _zurb_foundation_render_link($link) {
       // Build sub nav recursively.
       foreach ($link['#below'] as $sub_link) {
         if (!empty($sub_link['#href'])) {
-          $sub_menu .= _zurb_foundation_render_link($sub_link);
+          $sub_menu .= _wildlifeday_render_link($sub_link);
         }
       }
 
@@ -250,7 +250,7 @@ function _zurb_foundation_render_link($link) {
 /**
  * Theme function to render a single top bar menu link.
  */
-function theme_zurb_foundation_menu_link($variables) {
+function theme_wildlifeday_menu_link($variables) {
   $link = $variables['link'];
   return l($link['#title'], $link['#href'], $link['#localized_options']);
 }
@@ -258,7 +258,7 @@ function theme_zurb_foundation_menu_link($variables) {
 /**
  * Implements hook_preprocess_block().
  */
-function zurb_foundation_preprocess_block(&$variables) {
+function wildlifeday_preprocess_block(&$variables) {
   // Convenience variable for block headers.
   $title_class = &$variables['title_attributes_array']['class'];
 
@@ -297,7 +297,7 @@ function zurb_foundation_preprocess_block(&$variables) {
 /**
  * Implements template_preprocess_field().
  */
-function zurb_foundation_preprocess_field(&$variables) {
+function wildlifeday_preprocess_field(&$variables) {
   $variables['title_attributes_array']['class'][] = 'field-label';
 
   // Edit classes for taxonomy term reference fields.
@@ -401,7 +401,7 @@ function zurb_foundation_preprocess_field(&$variables) {
  *
  * Adds additional classes.
  */
-function zurb_foundation_preprocess_html(&$variables) {
+function wildlifeday_preprocess_html(&$variables) {
   global $language;
 
   // Clean up the lang attributes.
@@ -464,7 +464,7 @@ function zurb_foundation_preprocess_html(&$variables) {
  *
  * Add template suggestions and classes.
  */
-function zurb_foundation_preprocess_node(&$variables) {
+function wildlifeday_preprocess_node(&$variables) {
   // Add node--node_type--view_mode.tpl.php suggestions.
   $variables['theme_hook_suggestions'][] = 'node__' . $variables['type'] . '__' . $variables['view_mode'];
 
@@ -484,7 +484,7 @@ function zurb_foundation_preprocess_node(&$variables) {
  *
  * Add convenience variables and template suggestions.
  */
-function zurb_foundation_preprocess_page(&$variables) {
+function wildlifeday_preprocess_page(&$variables) {
   // Add page--node_type.tpl.php suggestions.
   if (!empty($variables['node'])) {
     $variables['theme_hook_suggestions'][] = 'page__' . $variables['node']->type;
@@ -525,14 +525,14 @@ function zurb_foundation_preprocess_page(&$variables) {
   }
 
   // Top bar.
-  if ($variables['top_bar'] = theme_get_setting('zurb_foundation_top_bar_enable')) {
+  if ($variables['top_bar'] = theme_get_setting('wildlifeday_top_bar_enable')) {
     $top_bar_classes = array();
 
-    if (theme_get_setting('zurb_foundation_top_bar_grid')) {
+    if (theme_get_setting('wildlifeday_top_bar_grid')) {
       $top_bar_classes[] = 'contain-to-grid';
     }
 
-    if (theme_get_setting('zurb_foundation_top_bar_sticky')) {
+    if (theme_get_setting('wildlifeday_top_bar_sticky')) {
       $top_bar_classes[] = 'sticky';
     }
 
@@ -541,29 +541,29 @@ function zurb_foundation_preprocess_page(&$variables) {
     }
 
     $variables['top_bar_classes'] = implode(' ', $top_bar_classes);
-    $variables['top_bar_menu_text'] = check_plain(theme_get_setting('zurb_foundation_top_bar_menu_text'));
+    $variables['top_bar_menu_text'] = check_plain(theme_get_setting('wildlifeday_top_bar_menu_text'));
 
     $top_bar_options = array();
 
-    if (!theme_get_setting('zurb_foundation_top_bar_custom_back_text')) {
+    if (!theme_get_setting('wildlifeday_top_bar_custom_back_text')) {
       $top_bar_options[] = 'custom_back_text:false';
     }
 
-    if ($back_text = check_plain(theme_get_setting('zurb_foundation_top_bar_back_text'))) {
+    if ($back_text = check_plain(theme_get_setting('wildlifeday_top_bar_back_text'))) {
       if ($back_text !== 'Back') {
         $top_bar_options[] = "back_text:'{$back_text}'";
       }
     }
 
-    if (!theme_get_setting('zurb_foundation_top_bar_is_hover')) {
+    if (!theme_get_setting('wildlifeday_top_bar_is_hover')) {
       $top_bar_options[] = 'is_hover:false';
     }
 
-    if (!theme_get_setting('zurb_foundation_top_bar_scrolltop')) {
+    if (!theme_get_setting('wildlifeday_top_bar_scrolltop')) {
       $top_bar_options[] = 'scrolltop:false';
     }
 
-    if (theme_get_setting('zurb_foundation_top_bar_mobile_show_parent_link')) {
+    if (theme_get_setting('wildlifeday_top_bar_mobile_show_parent_link')) {
       $top_bar_options[] = 'mobile_show_parent_link:true';
     }
 
@@ -647,7 +647,7 @@ function zurb_foundation_preprocess_page(&$variables) {
   }
 
   // Messages in modal.
-  $variables['zurb_foundation_messages_modal'] = theme_get_setting('zurb_foundation_messages_modal');
+  $variables['wildlifeday_messages_modal'] = theme_get_setting('wildlifeday_messages_modal');
 
   // Convenience variables.
   if (!empty($variables['page']['sidebar_first'])) {
@@ -681,20 +681,20 @@ function zurb_foundation_preprocess_page(&$variables) {
   }
 
   // Ensure modal reveal behavior if modal messages are enabled.
-  if (theme_get_setting('zurb_foundation_messages_modal')) {
-    drupal_add_js(drupal_get_path('theme', 'zurb_foundation') . '/js/behavior/reveal.js');
+  if (theme_get_setting('wildlifeday_messages_modal')) {
+    drupal_add_js(drupal_get_path('theme', 'wildlifeday') . '/js/behavior/reveal.js');
   }
 }
 
 /**
  * Implements hook_css_alter().
  */
-function zurb_foundation_css_alter(&$css) {
+function wildlifeday_css_alter(&$css) {
   // Remove defaults.css file.
   unset($css[drupal_get_path('module', 'system') . '/system.menus.css']);
 
   // Remove Drupal core CSS.
-  if (theme_get_setting('zurb_foundation_disable_core_css')) {
+  if (theme_get_setting('wildlifeday_disable_core_css')) {
     foreach ($css as $path => $values) {
       if (strpos($path, 'modules/') === 0) {
         unset($css[$path]);
@@ -706,7 +706,7 @@ function zurb_foundation_css_alter(&$css) {
 /**
  * Replace Drupal pagers with Foundation pagers.
  */
-function zurb_foundation_pager($variables) {
+function wildlifeday_pager($variables) {
   $tags = $variables['tags'];
   $element = $variables['element'];
   $parameters = $variables['parameters'];
@@ -841,7 +841,7 @@ function zurb_foundation_pager($variables) {
       '#attributes' => array('class' => array('pagination', 'pager')),
     );
 
-    if (theme_get_setting('zurb_foundation_pager_center')) {
+    if (theme_get_setting('wildlifeday_pager_center')) {
       $pager_links['#prefix'] = '<div class="pagination-centered">';
       $pager_links['#suffix'] = '</div>';
     }
@@ -855,10 +855,10 @@ function zurb_foundation_pager($variables) {
 /**
  * Implements hook_theme().
  */
-function zurb_foundation_theme() {
+function wildlifeday_theme() {
   $return = array();
 
-  $return['zurb_foundation_reveal'] = array(
+  $return['wildlifeday_reveal'] = array(
     'variables' => array(
       // The text to display in the link.
       'text' => '',
@@ -880,12 +880,12 @@ function zurb_foundation_theme() {
       // Extra classes to add to the reveal modal.
       'reveal_classes_array' => array('expand'),
     ),
-    'function' => 'theme_zurb_foundation_reveal',
+    'function' => 'theme_wildlifeday_reveal',
   );
 
-  $return['zurb_foundation_menu_link'] = array(
+  $return['wildlifeday_menu_link'] = array(
     'variables' => array('link' => NULL),
-    'function' => 'theme_zurb_foundation_menu_link',
+    'function' => 'theme_wildlifeday_menu_link',
   );
   return $return;
 }
@@ -903,9 +903,9 @@ function zurb_foundation_theme() {
  * @return array
  *   An array of all reveal render arrays.
  *
- * @see theme_zurb_foundation_reveal()
+ * @see theme_wildlifeday_reveal()
  */
-function _zurb_foundation_reveal($reveal = NULL) {
+function _wildlifeday_reveal($reveal = NULL) {
   $reveals = &drupal_static(__FUNCTION__);
 
   if (!isset($reveals)) {
@@ -923,11 +923,11 @@ function _zurb_foundation_reveal($reveal = NULL) {
 /**
  * Theme function to create Zurb Foundation reveal modals.
  *
- * @see zurb_foundation_theme()
- * @see zurb_foundation_preprocess_region()
- * @see _zurb_foundation_reveal()
+ * @see wildlifeday_theme()
+ * @see wildlifeday_preprocess_region()
+ * @see _wildlifeday_reveal()
  */
-function theme_zurb_foundation_reveal($variables) {
+function theme_wildlifeday_reveal($variables) {
   // Generate unique IDs.
   static $counter = 0;
 
@@ -948,7 +948,7 @@ function theme_zurb_foundation_reveal($variables) {
   );
 
   // Add reveal markup to static storage.
-  _zurb_foundation_reveal($reveal);
+  _wildlifeday_reveal($reveal);
 
   $build = array(
     '#theme' => 'link',
@@ -979,11 +979,11 @@ function theme_zurb_foundation_reveal($variables) {
 /**
  * Add the reveal modal markup (if any) to the page_bottom region.
  */
-function _zurb_foundation_add_reveals() {
+function _wildlifeday_add_reveals() {
   $markup = '';
 
   // Retrieve reveal markup from static storage.
-  foreach (_zurb_foundation_reveal() as $reveal) {
+  foreach (_wildlifeday_reveal() as $reveal) {
     $markup .= "\n" . drupal_render($reveal);
   }
 
@@ -993,7 +993,7 @@ function _zurb_foundation_add_reveals() {
 /**
  * Implements hook_theme_registry_alter().
  */
-function zurb_foundation_theme_registry_alter(&$theme_registry) {
+function wildlifeday_theme_registry_alter(&$theme_registry) {
   // Add our own preprocess function to entities so we can add default classes
   // to our custom Display Suite layouts.
   $entity_info = entity_get_info();
@@ -1007,19 +1007,19 @@ function zurb_foundation_theme_registry_alter(&$theme_registry) {
 
       // Only add preprocess functions if entity exposes theme function.
       if (isset($theme_registry[$entity])) {
-        $theme_registry[$entity]['preprocess functions'][] = 'zurb_foundation_entity_variables';
+        $theme_registry[$entity]['preprocess functions'][] = 'wildlifeday_entity_variables';
       }
     }
   }
 
   // Support for File Entity.
   if (isset($theme_registry['file_entity'])) {
-    $theme_registry['file_entity']['preprocess functions'][] = 'zurb_foundation_entity_variables';
+    $theme_registry['file_entity']['preprocess functions'][] = 'wildlifeday_entity_variables';
   }
 
   // Support for Entity API.
   if (isset($theme_registry['entity'])) {
-    $theme_registry['entity']['preprocess functions'][] = 'zurb_foundation_entity_variables';
+    $theme_registry['entity']['preprocess functions'][] = 'wildlifeday_entity_variables';
   }
 }
 
@@ -1028,9 +1028,9 @@ function zurb_foundation_theme_registry_alter(&$theme_registry) {
  *
  * This approach was taken from Display Suite.
  *
- * @see zurb_foundation_theme_registry_alter()
+ * @see wildlifeday_theme_registry_alter()
  */
-function zurb_foundation_entity_variables(&$vars) {
+function wildlifeday_entity_variables(&$vars) {
   // Only alter entities that have been rendered by Display Suite.
   if (isset($vars['rendered_by_ds'])) {
     // If Display Suite rendered this, it's safe to assume we have the arguments
@@ -1205,8 +1205,8 @@ function zurb_foundation_entity_variables(&$vars) {
  * Prunes HTML tags: http://sonspring.com/journal/html5-in-drupal-7#_pruning
  * Updated per https://www.drupal.org/node/2326309
  */
-function zurb_foundation_process_html_tag(&$vars) {
-  if (theme_get_setting('zurb_foundation_html_tags')) {
+function wildlifeday_process_html_tag(&$vars) {
+  if (theme_get_setting('wildlifeday_html_tags')) {
     $el = &$vars['element'];
 
     // Remove type="..."
@@ -1235,7 +1235,7 @@ function zurb_foundation_process_html_tag(&$vars) {
  * @variables array
  *   An array of links
  */
-function zurb_foundation_links__magic_button($variables) {
+function wildlifeday_links__magic_button($variables) {
   if (empty($variables['attributes']['class'])) {
     $variables['attributes']['class'] = array();
   }
@@ -1243,12 +1243,12 @@ function zurb_foundation_links__magic_button($variables) {
   if (count($variables['links']) > 1) {
     switch ($variables['type']) {
       case 'split':
-        return zurb_foundation_links__split_button($variables);
+        return wildlifeday_links__split_button($variables);
 
       case 'dropdown':
 
       default:
-        return zurb_foundation_links__dropdown_button($variables);
+        return wildlifeday_links__dropdown_button($variables);
     }
   }
 
@@ -1282,7 +1282,7 @@ function zurb_foundation_links__magic_button($variables) {
  *
  * Formats links for Dropdown Button http://goo.gl/z4lH3q
  */
-function zurb_foundation_links__dropdown_button($variables) {
+function wildlifeday_links__dropdown_button($variables) {
   if (empty($variables['attributes']['class'])) {
     $variables['attributes']['class'] = array();
   }
@@ -1300,7 +1300,7 @@ function zurb_foundation_links__dropdown_button($variables) {
 
   $title = '<a href="#"' . drupal_attributes($variables['attributes']) . '>' . $variables['label'] . '</a>';
 
-  $output = _zurb_foundation_links($variables['links']);
+  $output = _wildlifeday_links($variables['links']);
   return $title . '<ul id="' . $variables['attributes']['data-dropdown'] . '" class="f-dropdown" data-dropdown-content>' . $output . '</ul>';
 }
 
@@ -1320,7 +1320,7 @@ function zurb_foundation_links__dropdown_button($variables) {
  *
  * Formats links for Split Button http://goo.gl/UXVNgF
  */
-function zurb_foundation_links__split_button($variables) {
+function wildlifeday_links__split_button($variables) {
   $links = $variables['links'];
 
   if (empty($variables['attributes']['class'])) {
@@ -1347,7 +1347,7 @@ function zurb_foundation_links__split_button($variables) {
   $primary_link['#localized_options']['attributes'] = array_merge_recursive($primary_link['#localized_options']['attributes'], $variables['attributes']);
   $primary_link = l($primary_link['#title'], '', $primary_link['#localized_options']);
 
-  $output = _zurb_foundation_links($links);
+  $output = _wildlifeday_links($links);
 
   return $primary_link . '<ul id="' . $id . '" class="f-dropdown" data-dropdown-content>' . $output . '</ul>';
 }
