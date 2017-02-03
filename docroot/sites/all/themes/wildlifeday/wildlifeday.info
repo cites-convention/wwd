@@ -46,7 +46,7 @@ stylesheets[all][] = css/style.css
 ; If you prefer to have more control over which components are included you
 ; can comment this line and uncomment the ones below you want.
 scripts[] = js/jquery-ui.min.js
-scripts[] = js/foundation.min.js
+scripts[] = js/foundation.js
 scripts[] = js/motion-ui.min.js
 scripts[] = js/owl.carousel.min.js
 scripts[] = js/app.js
