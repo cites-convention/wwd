@@ -33,6 +33,8 @@ stylesheets[all][] = css/font-awesome.min.css
 stylesheets[all][] = css/owl.carousel.css
 stylesheets[all][] = css/owl.transitions.css
 stylesheets[all][] = css/app.css
+stylesheets[all][] = css/style.css
+
 ; Comment the app.css file (above) if you're using sass to preprocess css:
 ;stylesheets[all][] = css/custom.css
 
