@@ -3809,7 +3809,7 @@ table.hover tr:nth-of-type(even):hover {
           animation-delay: 700ms !important; }
 
 /*===========================================================*/
-/*  GENERAL 
+/*  GENERAL
 /*===========================================================*/
 ::-moz-selection {
   background-color: #2c3e50;
@@ -3855,7 +3855,7 @@ table.hover tr:nth-of-type(even):hover {
     font-size: 2rem; } }
 
 /*===========================================================*/
-/*  NAVIGATION 
+/*  NAVIGATION
 /*===========================================================*/
 /*
 *	NAV - MOBILE
@@ -4043,7 +4043,7 @@ table.hover tr:nth-of-type(even):hover {
     display: block; } }
 
 /*===========================================================*/
-/*  HERO 
+/*  HERO
 /*===========================================================*/
 .slogan {
   position: absolute;
@@ -4058,8 +4058,8 @@ table.hover tr:nth-of-type(even):hover {
   font-size: 4.5rem;
   }
   .slogan h1 span {
-    background-color: rgba(255, 255, 255, 0.2);
-    width: 224px;
+/*  background-color: rgba(255, 255, 255, 0.2);
+    width: 224px;*/
     display: inline-block; }
   .slogan p {
     font-size: 4.5rem;
@@ -4230,7 +4230,7 @@ table.hover tr:nth-of-type(even):hover {
       display: none; } }
 
 /*===========================================================*/
-/*  MAIN 
+/*  MAIN
 /*===========================================================*/
 .introduction hr {
   margin-bottom: 2em;
@@ -4331,7 +4331,7 @@ table.hover tr:nth-of-type(even):hover {
       float: right; } }
 
 /*===========================================================*/
-/*  FOOTER 
+/*  FOOTER
 /*===========================================================*/
 footer ul {
   margin: 0;
