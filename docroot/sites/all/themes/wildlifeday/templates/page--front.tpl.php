@@ -24,13 +24,13 @@
 	<div class="intro-hero">
 		<div class="wrap row">
 			<ul class="msg columns small-8 medium-10 large-9">
-				<!-- DELETE THESE COMMENTS TO PUT BACK UNSG MESSAGE
+				
 				<li class="animated fadeInUp">
 					<a data-open="Ban-Ki-moon_welcome-panel" href="#">
 						<img src="<?php print $directory;?>/images/theme/UN-SG-image.jpg" alt="United Nations SG">
 					</a>
 					<h6>António Guterres Secretary-General United Nations</h6>
-				</li>-->
+				</li>
 				<li class="animated fadeInUp">
 					<a data-open="John_Scanlon_welcome-panel" href="#">
 						<img src="<?php print $directory;?>/images/theme/John_Scanlon_SG_CITES.jpg" alt="John Scanlon">
